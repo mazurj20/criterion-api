@@ -13,8 +13,12 @@ app.use(express.json());
 //api route
 app.get("/", (req, res) => res.status(200).send(Movies));
 
-app.get("/:Title", ({ params }, res) => {
+app.get("/Title/:Title", ({ params }, res) => {
   Movies.findOne({ Title: params.Title }).then((movie) => res.json(movie));
+});
+
+app.get("/Country/:Country", ({ params }, res) => {
+  Movies.find({ Country: params.Country }).then((movie) => res.json(movie));
 });
 //listener
 app.listen(port, () => console.log(`listening on ${port}`));
