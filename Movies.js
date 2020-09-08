@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("./database.js");
 
 const Movies = mongoose.Schema({
   Title: String,
@@ -10,4 +10,4 @@ const Movies = mongoose.Schema({
   Image: String,
 });
 
-export default mongoose.model("Movies", Movies);
+module.exports = mongoose.model("Movies", Movies);
