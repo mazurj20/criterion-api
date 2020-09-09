@@ -20,5 +20,23 @@ app.get("/Title/:Title", ({ params }, res) => {
 app.get("/Country/:Country", ({ params }, res) => {
   Movies.find({ Country: params.Country }).then((movie) => res.json(movie));
 });
+
+app.post("/Add", ({ body }, res) => {
+  Movies.create(body).then((movies) => res.json(movies));
+});
+
+app.put("/Update/:Title", (req, res) => {
+  Movies.findOneAndUpdate(
+    { Title: req.params.Title },
+    { $set: req.body },
+    { new: true }
+  ).then((movie) => res.json(movie));
+});
+
+app.delete("/Delete/:Title", ({ params }, res) => {
+  Movies.findOneAndDelete({ Title: params.Title }).then((movie) =>
+    res.json(movie)
+  );
+});
 //listener
 app.listen(port, () => console.log(`listening on ${port}`));
