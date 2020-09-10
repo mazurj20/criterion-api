@@ -35,7 +35,7 @@
 > ###### /Delete/{Title}
 
 
-###### Example: https://criterion-api.herokuapp.com/Title/Taipei Story :
+###### Example: https://criterion-api.herokuapp.com/Title/Taipei%20Story :
 
 ```
 {
