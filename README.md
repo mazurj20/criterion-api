@@ -1,6 +1,7 @@
 # **Criterion Collection API**
 
 ##### This is a RESTful API that contains data of all the films in the Criterion Collection.
+> ###### data from criterion.com
 
 ## Features:
 
